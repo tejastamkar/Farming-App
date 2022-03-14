@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "27231187985",
+    "project_id": "kisaanhal",
+    "storage_bucket": "kisaanhal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27231187985:android:4150bb96b63ac7cfce2db0",
+        "android_client_info": {
+          "package_name": "com.kisaanhal.shi.kisaanhal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "27231187985-75umlbmbno7acij8ki5g909a3i3u61ce.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kisaanhal.shi.kisaanhal",
+            "certificate_hash": "df240469c907ba52e452fc57892a95bbb9e2eef7"
+          }
+        },
+        {
+          "client_id": "27231187985-7h178dp5fp9773ubpiaquf45oushhb0n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBx5fY02aSb43JRjQoDR5m1lvhreLS11LU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "27231187985-7h178dp5fp9773ubpiaquf45oushhb0n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
