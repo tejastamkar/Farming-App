@@ -2,8 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-class AdsCards extends StatelessWidget {
-  AdsCards({Key? key}) : super(key: key);
+class AdsCards extends StatefulWidget {
+  const AdsCards({Key? key}) : super(key: key);
+
+  @override
+  State<AdsCards> createState() => _AdsCardsState();
+}
+
+class _AdsCardsState extends State<AdsCards> {
   List<dynamic> cardData = [
     {
       'title': 'Vehicle',
