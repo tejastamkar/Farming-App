@@ -13,14 +13,13 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
-    MediaQueryData queryData;
-    queryData = MediaQuery.of(context);
+    double width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Column(
         children: [
           Image.asset(
             'assets/loginPageImg.png',
-            width: queryData.size.width + 200,
+            width: width,
             // height: 100,
           ),
           Column(

@@ -47,23 +47,20 @@ class _NavbarState extends State<Navbar> {
       backgroundColor: Colors.white,
       body: screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
+            icon: ImageIcon(AssetImage('icons/Notselected_Home.png')),
+            activeIcon: Image.asset('icons/Home.png'),
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.message,
-              size: 30,
-            ),
+            icon: ImageIcon(AssetImage('icons/Notselected_Message.png')),
+            activeIcon: Image.asset('icons/Message.png'),
             label: 'Chat',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person,
-              size: 30,
-            ),
+            icon: ImageIcon(AssetImage('icons/Notselected_Profile.png')),
+            activeIcon: Image.asset('icons/Profile.png'),
             label: 'Profile',
           ),
         ],

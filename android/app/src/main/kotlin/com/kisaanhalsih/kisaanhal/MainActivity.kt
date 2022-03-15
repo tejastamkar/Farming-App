@@ -1,4 +1,4 @@
-package com.kisaanhal.shi.kisaanhal
+package com.kisaanhalsih.kisaanhal
 
 import io.flutter.embedding.android.FlutterActivity
 

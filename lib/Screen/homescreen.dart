@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kisaanhal/widgets/adscards.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,6 +11,16 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Center(child: Text('This is Home Page'));
+    return Column(
+      children: [
+        Card(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 100),
+            child: Column(children: [Text('This is Dashboard')]),
+          ),
+        ),
+        AdsCards(),
+      ],
+    );
   }
 }

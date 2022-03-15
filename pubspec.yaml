@@ -42,6 +42,7 @@ dependencies:
   provider: ^6.0.2
   # for icons and fonts
   font_awesome_flutter: ^9.2.0
+  change_app_package_name: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -67,7 +68,9 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
-    - assets/navbarIcons/selected/
+    - icons/
+    - AdsCardsImage/
+    # - assets/navbaricons/notselected/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

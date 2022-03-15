@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.kisaanhal.shi.kisaanhal">
+    package="com.kisaanhalsih.kisaanhal">
    <application
         android:label="kisaanhal"
         android:name="${applicationName}"
