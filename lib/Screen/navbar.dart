@@ -37,13 +37,13 @@ class _NavbarState extends State<Navbar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(appBarTitle),
-        backgroundColor: Colors.white,
-        elevation: 0,
-        titleTextStyle: TextStyle(color: Colors.black, fontSize: 26.0),
-        centerTitle: true,
-      ),
+      // appBar: AppBar(
+      //   title: Text(appBarTitle),
+      //   backgroundColor: Colors.white,
+      //   elevation: 0,
+      //   titleTextStyle: TextStyle(color: Colors.black, fontSize: 26.0),
+      //   centerTitle: true,
+      // ),
       backgroundColor: Colors.white,
       body: screens[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(

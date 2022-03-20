@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:kisaanhal/Screen/loginscreen.dart';
 import 'package:kisaanhal/Screen/navbar.dart';
+import 'package:kisaanhal/api/firebaseuserstore.dart';
 import 'package:kisaanhal/provider/google_sign_in.dart';
 import 'package:provider/provider.dart';
 
@@ -19,7 +20,6 @@ class LoginFunc extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-       
         body: ChangeNotifierProvider(
           create: (context) => GoogleSignInProvider(),
           child: StreamBuilder(
@@ -30,6 +30,7 @@ class LoginFunc extends StatelessWidget {
               if (provider.isSigningIn) {
                 return buildLoading();
               } else if (snapshot.hasData) {
+                fireStoreUserData();
                 return const Navbar();
               } else {
                 return const LoginScreen();

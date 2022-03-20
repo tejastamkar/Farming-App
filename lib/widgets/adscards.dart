@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:kisaanhal/Screen/item_info.dart';
 
 class AdsCards extends StatefulWidget {
   const AdsCards({Key? key}) : super(key: key);
@@ -35,28 +37,51 @@ class _AdsCardsState extends State<AdsCards> {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      shrinkWrap: true,
-      itemCount: cardData.length,
-      itemBuilder: (context, index) {
-        return GridTile(
-          child: AdsCard(
-              title: '${cardData[index]['title']}',
-              price: '${cardData[index]['price']}',
-              image: '${cardData[index]['image']}'),
-        );
+    final Stream<QuerySnapshot> collection =
+        FirebaseFirestore.instance.collection('Ads').snapshots();
+
+    return StreamBuilder<QuerySnapshot>(
+      stream: collection,
+      builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+        final data = snapshot.data;
+        if (snapshot.hasError) {
+          return Text("Something went Wrong");
+        }
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Text('loading data');
+        }
+        if (snapshot.hasData) {
+          return GridView.builder(
+            shrinkWrap: true,
+            itemCount: data.size,
+            itemBuilder: (context, index) {
+              return GridTile(
+                child: AdsCard(
+                    name: '${data.docs[index]['Name']}',
+                    title: '${data.docs[index]['Title']}',
+                    price: '${data.docs[index]['Price']}',
+                    image: '${data.docs[index]['Picture']}'),
+              );
+            },
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2),
+          );
+        }
+        return Text("Loading...");
       },
-      gridDelegate:
-          const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
     );
   }
 }
 
 class AdsCard extends StatelessWidget {
   const AdsCard(
-      {Key? key, required this.title, required this.price, required this.image})
+      {Key? key,
+      required this.title,
+      required this.price,
+      required this.image,
+      required this.name})
       : super(key: key);
-  final String title, price, image;
+  final String title, price, image, name;
 
   @override
   Widget build(BuildContext context) {
@@ -66,12 +91,20 @@ class AdsCard extends StatelessWidget {
       child: ElevatedButton(
         style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(Colors.white)),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => ItemInfoScreen(
+                    title: title, price: price, imageUrl: image, name: name)),
+          );
+        },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Image.asset(
+            Image.network(
               image,
+              // width: 200,
               height: 130,
               fit: BoxFit.fill,
             ),
