@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:kisaanhal/Screen/item_add_info.dart';
 import 'package:kisaanhal/Screen/loginscreen.dart';
 import 'package:kisaanhal/Screen/navbar.dart';
 import 'package:kisaanhal/api/firebaseuserstore.dart';
@@ -10,8 +11,13 @@ import 'package:provider/provider.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(const MaterialApp(
-    home: LoginFunc(),
+  runApp(MaterialApp(
+    home: const LoginFunc(),
+    initialRoute: '/',
+    routes: {
+      // '/': (context) => const LoginFunc(),
+      '/itemaddinfo': (context) => const ItemAddInfo()
+    },
   ));
 }
 

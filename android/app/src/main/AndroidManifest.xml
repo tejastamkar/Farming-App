@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.kisaanhalsih.kisaanhal">
+    <uses-permission android:name='android.permission.WRITE_EXTERNAL-STORAGE'/>
+    <uses-permission android:name='android.permission.READ_EXTERNAL-STORAGE'/>
    <application
         android:label="kisaanhal"
         android:name="${applicationName}"

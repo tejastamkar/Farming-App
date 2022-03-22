@@ -48,9 +48,10 @@ class ItemInfoScreenState extends State<ItemInfoScreen> {
           Container(
               alignment: Alignment.topLeft,
               padding: const EdgeInsets.fromLTRB(20.0, 20.0, 0, 0),
-              child: const Text(
-                "Items:  Tractor",
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              child: Text(
+                "Items:  ${widget.title}",
+                style:
+                    const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               )),
           Container(
               alignment: Alignment.topLeft,

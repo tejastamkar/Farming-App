@@ -26,7 +26,9 @@ class _HomePageState extends State<HomePage> {
           Padding(
               padding: const EdgeInsets.only(right: 20.0),
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, '/itemaddinfo');
+                },
                 child: const Icon(
                   Icons.add,
                   size: 26.0,

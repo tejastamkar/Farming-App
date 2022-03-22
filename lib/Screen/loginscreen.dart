@@ -25,8 +25,8 @@ class _LoginScreenState extends State<LoginScreen> {
             const Text(
               'Welcome to KisanHal ',
               style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w400,
+                  fontSize: 30,
+                  fontWeight: FontWeight.w700,
                   color: Color.fromARGB(255, 0, 2, 7),
                   fontFamily: 'Overprass'),
             ),
@@ -36,11 +36,12 @@ class _LoginScreenState extends State<LoginScreen> {
             Container(
               margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 60),
               child: const Text(
-                'A App To Rent Farming Tools',
+                'Lets Join together ',
                 style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w400,
+                  fontSize: 24,
+                  fontWeight: FontWeight.w700,
                   fontFamily: 'Overpass',
+                  color: Color.fromARGB(255, 48, 164, 100),
                 ),
                 textAlign: TextAlign.center,
               ),
